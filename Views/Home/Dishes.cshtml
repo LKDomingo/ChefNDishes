@@ -1,0 +1,38 @@
+
+
+<div class="text-center py-4">
+    <div class="d-flex justify-content-between align-items-end">
+        <div class="flex-fill"><h5 style="color: white;">Add a Chef</h5></div>
+        <div class="flex-fill">
+            <h1 class="display-4"><a class="display-4" href="/">Chefs</a> | Dishes</h1>
+        </div>
+        <div class="flex-fill d-flex justify-content-end"><a href="/dishes/new"><h5>Add a Dish</h5></a></div>
+    </div>
+    <div class="d-flex justify-content-start">
+        <h1 class="display-6 pt-4">Yum, take a look at our tasty dishes!</h1>
+    </div>
+    <hr>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Chef</th>
+                <th>Tastiness</th>
+                <th>Calories</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var i in @ViewBag.AllDishes)
+            {
+                <tr>
+                    <td>@i.DishName</td>
+                    <td>@i.Chef.FirstName @i.Chef.LastName</td>
+                    <td>@i.Tastiness</td>
+                    <td>@i.Calories</td>
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+    
+</div>
